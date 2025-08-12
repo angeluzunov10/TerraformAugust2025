@@ -10,7 +10,7 @@ terraform {
     resource_group_name  = "StorageRG"
     storage_account_name = "taskboardstorageangel10"
     container_name       = "taskboardcontainer"
-    key                  = "terraform.tfstate" 
+    key                  = "terraform.tfstate"
   }
 }
 
@@ -86,8 +86,8 @@ resource "azurerm_mssql_firewall_rule" "firewall" {
 }
 
 resource "azurerm_app_service_source_control" "aassc" {
-  app_id   = azurerm_linux_web_app.alwa.id
-  repo_url = var.repo_url
-  branch   = "main"
+  app_id                 = azurerm_linux_web_app.alwa.id
+  repo_url               = var.repo_url
+  branch                 = "main"
   use_manual_integration = true
 }
